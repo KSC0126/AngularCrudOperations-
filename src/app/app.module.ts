@@ -6,6 +6,7 @@ import { ListEmployeesComponent } from './employee/list-employees.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { AppRoutingModule} from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import {BsDatepickerModule}  from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    BsDatepickerModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],
