@@ -7,6 +7,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { AppRoutingModule} from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {BsDatepickerModule}  from 'ngx-bootstrap/datepicker';
+import { ConfirmEqualValidatorDirective } from '../shared/confirm-equal-validator.directive';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {BsDatepickerModule}  from 'ngx-bootstrap/datepicker';
     AppComponent,
     HomeComponent,
     ListEmployeesComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     BrowserModule,
