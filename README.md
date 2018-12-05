@@ -1,3 +1,6 @@
+# Lot of commented code
+This Repo contains lot of commented code as I played around with different concepts of angular v5.
+
 # AngularCrud
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
