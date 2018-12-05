@@ -1,3 +1,9 @@
+<h1 *ngIf ="dataFromChild">{{dataFromChild?.name + '' +dataFromChild?.department }}</h1>
 <div  *ngFor="let employee of employees">
-  <app-display-employee [employee]="employee"> </app-display-employee>
+  <app-display-employee [employee]="employee" (notify)="handleNotify($event)"> </app-display-employee>
 </div>
+<!-- <button (click)="nextEmployee()" class="btn btn-primary">Display Next Employee</button>
+<br/>
+<br/>
+<br/>
+<app-display-employee [employee]="employeeToDisplay"> </app-display-employee> -->
