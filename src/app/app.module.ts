@@ -8,6 +8,9 @@ import { AppRoutingModule} from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {BsDatepickerModule}  from 'ngx-bootstrap/datepicker';
 import { ConfirmEqualValidatorDirective } from '../shared/confirm-equal-validator.directive';
+import { SelectRequiredValidatorDirective } from '../shared/select-required-validator.directive';
+import { EmployeeService } from '../app/employee/employee.service';
+import { DisplayEmployeeComponent } from './display-employee/display-employee.component';
 
 
 @NgModule({
@@ -16,7 +19,9 @@ import { ConfirmEqualValidatorDirective } from '../shared/confirm-equal-validato
     HomeComponent,
     ListEmployeesComponent,
     CreateEmployeeComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    SelectRequiredValidatorDirective,
+    DisplayEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { ConfirmEqualValidatorDirective } from '../shared/confirm-equal-validato
     BsDatepickerModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

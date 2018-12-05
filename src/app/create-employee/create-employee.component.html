@@ -51,19 +51,20 @@
       <div class="form-group" >
         
         <div class="from-control" [class.has-error]="isActive.invalid && isActive.touched" [class.has-success]="isActive.valid">
-          <label class="checkbox-inline control-label">
+          <label for="isActive" class="checkbox-inline control-label">
             <input type="checkbox" value="isActive" name="isActive" [(ngModel)]="employee.isActive" required #isActive="ngModel"> Is Active
           </label>
           <span  class="help-block" *ngIf="isActive.invalid && isActive.touched">make a selection</span>
 
         </div>
       </div>
-      <div class="form-group">
-        <label for="department">Depatment</label>
-        <select id="department" name="department" value="department" class="form-control" [(ngModel)]="employee.department">
+      <div class="form-group" [class.has-error]="department.invalid && department.touched" [class.has-success]="department.valid">
+        <label for="department" class="control-label" > Depatment</label>
+        <select id="department"  required appSelectValidator="select" name="department" value="department" class="form-control" [(ngModel)]="employee.department" #department ="ngModel">
+          <option value="select">Select Department</option>
           <option *ngFor="let dept of departments" [value]="dept.id"> {{dept.name}} </option>
-
         </select>
+        <span  class="help-block" *ngIf="department.touched && department.errors?.defaultSelected">department Requires </span>
       </div>
       <div class="row">
         <div class="form-group col-md-3">
