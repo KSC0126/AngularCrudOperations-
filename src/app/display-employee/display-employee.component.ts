@@ -10,8 +10,8 @@ export class DisplayEmployeeComponent implements OnInit { //, OnChanges
   // @Input() employeeId : number;
   @Input() employee : employee;
 
-  @Output() 
-  notify: EventEmitter<employee> = new EventEmitter<employee>();
+  // @Output() 
+  // notify: EventEmitter<employee> = new EventEmitter<employee>();
   //  @Input() 
   // employee: employee;
   //   constructor() { } // this code is whe we are using onchanges below is for if we use getter and setter to log changes
@@ -23,7 +23,9 @@ export class DisplayEmployeeComponent implements OnInit { //, OnChanges
   //   // console.log('current employee:' + val.name);
   //   this._employee = val;
 
-
+getEmployeeFromChild(){
+  return this.employee.name + '' + this.employee.gender;
+}
   // }
 
   // get employee(): employee {
@@ -36,11 +38,11 @@ export class DisplayEmployeeComponent implements OnInit { //, OnChanges
   ngOnInit() {
   }
 
-  handleClick(){
-    this.notify.emit(this.employee);
+  // handleClick(){
+  //   this.notify.emit(this.employee);
     
 
-  }
+  // }
 
   // ngOnChanges(changes:SimpleChanges){
 
