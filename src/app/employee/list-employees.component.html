@@ -1,7 +1,7 @@
 <!-- <h1 #h1Variable > </h1> -->
 <!-- *ngIf ="dataFromChild">{{dataFromChild?.name + '' +dataFromChild?.department }} -->
-<div *ngFor="let employee of employees">
-  <div>
+<div *ngFor="let employee of employees" >
+  <div (click)="onClick(employee.id)" class="pointerStyle">
   <!-- <div (click)="h1Variable.innerHTML = childComponent.employee.name + ' ' + childComponent.employee.gender "> -->
 
 

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ListEmployeesComponent } from './employee/list-employees.component'
 import { CreateEmployeeComponent } from './create-employee/create-employee.component'
 import { CreateEmployeeCanDeactiveGaurdGuardService } from '../app/create-employee-can-deactivate-gaur.service'
+import { EmployeeDetailsComponent } from './employee/employee-details.component';
 
 
 
@@ -28,6 +29,13 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '\list',
+    pathMatch: 'full'
+
+  },
+  {
+    path: 'employee/:id',
+    component: EmployeeDetailsComponent,
+    
     pathMatch: 'full'
 
   }

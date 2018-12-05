@@ -1,4 +1,10 @@
 .vertical-align{
     display: flex;
-    align-items: center;
+    align-items: center; 
+
+    
 }
+/* .panel-body{
+    background-color: gray;
+    color: white;
+} */
