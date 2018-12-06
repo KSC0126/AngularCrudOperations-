@@ -55,7 +55,8 @@ export class CreateEmployeeComponent implements OnInit {
   }
   saveEmployee( ):void{
 
-    const newEmployee: employee= Object.assign({},this.employee);// we need to assign a object to variable so that the reset method in the below will not reset the object which is need to be saved
+    const newEmployee: employee= Object.assign({},this.employee);
+    // we need to assign a object to variable so that the reset method in the below will not reset the object which is need to be saved
     this._employeeService.save(newEmployee);
     this.createEmployeeForm.reset();
     this._router.navigate(['list']);

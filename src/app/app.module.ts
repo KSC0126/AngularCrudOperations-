@@ -12,7 +12,8 @@ import { SelectRequiredValidatorDirective } from '../shared/select-required-vali
 import { EmployeeService } from '../app/employee/employee.service';
 import { DisplayEmployeeComponent } from './display-employee/display-employee.component';
 import { CreateEmployeeCanDeactiveGaurdGuardService } from '../app/create-employee-can-deactivate-gaur.service';
-import { EmployeeDetailsComponent } from './employee/employee-details.component'
+import { EmployeeDetailsComponent } from './employee/employee-details.component';
+import { EmployeeFilterPipe } from './employee-filter.pipe'
 
 
 
@@ -26,6 +27,7 @@ import { EmployeeDetailsComponent } from './employee/employee-details.component'
     SelectRequiredValidatorDirective,
     DisplayEmployeeComponent,
     EmployeeDetailsComponent,
+    EmployeeFilterPipe,
 
 
   ],
