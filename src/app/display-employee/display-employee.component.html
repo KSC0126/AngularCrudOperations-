@@ -1,5 +1,5 @@
 
-<div class="panel panel-primary" >
+<div class="panel panel-primary" [class.panel-success]="employee.id === selectedEmployeeId">
     <!-- (click)= "handleClick()" -->
     <div class="panel-heading">
       <h3 class="panel-tittle"> {{employee.name}}</h3>
