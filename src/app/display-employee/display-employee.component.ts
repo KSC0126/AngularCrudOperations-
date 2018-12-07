@@ -12,7 +12,9 @@ export class DisplayEmployeeComponent implements OnInit { //, OnChanges
  
   private selectedEmployeeId: number;
   confirmDelete : false;
+  isHiddemn: false;
   @Input() employee : employee;
+
   @Output() notifyDelete : EventEmitter<number> = new EventEmitter<number>();
 
  

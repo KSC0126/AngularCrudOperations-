@@ -13,7 +13,8 @@ import { EmployeeService } from '../app/employee/employee.service';
 import { DisplayEmployeeComponent } from './display-employee/display-employee.component';
 import { CreateEmployeeCanDeactiveGaurdGuardService } from '../app/create-employee-can-deactivate-gaur.service';
 import { EmployeeDetailsComponent } from './employee/employee-details.component';
-import { EmployeeFilterPipe } from './employee-filter.pipe'
+import { EmployeeFilterPipe } from './employee-filter.pipe';
+import { AccordionComponent } from './shared/accordion.component';
 
 
 
@@ -28,6 +29,8 @@ import { EmployeeFilterPipe } from './employee-filter.pipe'
     DisplayEmployeeComponent,
     EmployeeDetailsComponent,
     EmployeeFilterPipe,
+    AccordionComponent
+    ,
 
 
   ],
