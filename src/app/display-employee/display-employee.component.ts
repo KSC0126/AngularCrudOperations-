@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,Output,OnChanges, SimpleChanges, SimpleChange, EventEmitter } from '@angular/core';
 import { employee } from '../models/employee.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EmployeeService } from '../employee/employee.service';
 
 @Component({
   selector: 'app-display-employee',
@@ -10,12 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DisplayEmployeeComponent implements OnInit { //, OnChanges
  
   private selectedEmployeeId: number;
+  confirmDelete : false;
   @Input() employee : employee;
+  @Output() notifyDelete : EventEmitter<number> = new EventEmitter<number>();
 
  
     constructor( private _route : ActivatedRoute,
-    private _router: Router) { } // this code is whe we are using onchanges below is for if we use getter and setter to log changes
-
+    private _router: Router,
+  private _employeeService : EmployeeService) { } 
   
 
   ngOnInit() {
@@ -27,7 +30,10 @@ export class DisplayEmployeeComponent implements OnInit { //, OnChanges
   editEmployee(){
     this._router.navigate(['/edit',this.employee.id]);// route to a perticular employee edit page using id.
   }
-  
+  deleteEmployee(){
+    this._employeeService.deleteEmployee(this.employee.id);
+    this.notifyDelete.emit(this.employee.id);
+  }
   
   
 }

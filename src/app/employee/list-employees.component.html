@@ -3,12 +3,12 @@
 <div class="form-group">
   <input type="text" class="form-control" placeholder="search employee" width="250px" [(ngModel)]= "searchTerm"/>
 </div>
-<div *ngFor="let employee of filteredEmployees  " >
+<div *ngFor="let employee of filteredEmployees"  >
   
   <!-- <div (click)="h1Variable.innerHTML = childComponent.employee.name + ' ' + childComponent.employee.gender "> -->
 
 
-    <app-display-employee [employee]="employee" #childComponent > </app-display-employee>
+    <app-display-employee [employee]="employee" #childComponent (notifyDelete)="onDeleteNotification($event)" > </app-display-employee>
   
 
 </div>

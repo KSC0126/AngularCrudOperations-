@@ -66,6 +66,11 @@ export class EmployeeService {
       this.listEmployee[foundIndex] = employee;// find the index of the employee and adding edited changes to only that particural employee
     }
   }
-
+deleteEmployee(id: number){
+  const i = this.listEmployee.findIndex(e => e.id === id);
+  if( i !== -1) {
+    this.listEmployee.splice( i , 1);
+  }
+}
   constructor() { }
 }
