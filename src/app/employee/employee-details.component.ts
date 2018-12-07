@@ -38,5 +38,6 @@ export class EmployeeDetailsComponent implements OnInit {
     
     this._router.navigate(['/employee', this._id])
   }
+  
 
 }

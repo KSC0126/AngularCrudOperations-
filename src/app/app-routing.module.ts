@@ -21,7 +21,7 @@ const routes: Routes = [
     component: ListEmployeesComponent
   },
   {
-    path: 'create',
+    path: 'edit/:id',
     component: CreateEmployeeComponent,
     canDeactivate:[CreateEmployeeCanDeactiveGaurdGuardService]
   },

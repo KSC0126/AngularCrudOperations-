@@ -10,7 +10,26 @@ import {Router} from '@angular/router';
 export class ListEmployeesComponent implements OnInit {
 
   employees: employee[];
-  searchTerm: string;
+  filteredEmployees: employee[];
+  private _searchTerm: string;
+   
+  get searchTerm(): string {
+   return this._searchTerm;
+  }
+
+  set searchTerm(value:string){
+    this._searchTerm = value;
+    this.filteredEmployees = this.filterEmployees(value);
+
+  }
+
+  filterEmployees(searchString: string){
+    return this.employees.filter(employee => 
+      employee.name.toLocaleLowerCase().indexOf(searchString.toLocaleLowerCase()) !== -1);
+
+  }
+  
+
   // dataFromChild: employee;
   // employeeToDisplay:employee;
   // private arrayIndex = 1;
@@ -18,7 +37,8 @@ export class ListEmployeesComponent implements OnInit {
               private _router: Router) { }
 
   ngOnInit() {
-    this.employees = this._employeeService.getEmployees();
+    this.employees = this._employeeService.getEmployees();// used to get employees array from employee service 
+    this.filteredEmployees = this.employees;
     // this.employeeToDisplay = this.employees[0];
   }
   // handleNotify(eventData: employee){
@@ -35,7 +55,7 @@ export class ListEmployeesComponent implements OnInit {
   //   }
   // }
 
-  onClick(employeeId:number){
-    this._router.navigate(['/employee', employeeId]);
+  onClick(){
+    this._router.navigate(['/employee', this.employees]);
   }
 }
