@@ -15,6 +15,8 @@ import { CreateEmployeeCanDeactiveGaurdGuardService } from '../app/create-employ
 import { EmployeeDetailsComponent } from './employee/employee-details.component';
 import { EmployeeFilterPipe } from './employee-filter.pipe';
 import { AccordionComponent } from './shared/accordion.component';
+import { EmployeeListServiceResolverService } from './employee/employee-list-resolver.service';
+import { HttpClientModule} from '@angular/common/http'
 
 
 
@@ -37,10 +39,11 @@ import { AccordionComponent } from './shared/accordion.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     BsDatepickerModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [EmployeeService, CreateEmployeeCanDeactiveGaurdGuardService],
+  providers: [EmployeeService, CreateEmployeeCanDeactiveGaurdGuardService, EmployeeListServiceResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { ListEmployeesComponent } from './employee/list-employees.component'
 import { CreateEmployeeComponent } from './create-employee/create-employee.component'
 import { CreateEmployeeCanDeactiveGaurdGuardService } from '../app/create-employee-can-deactivate-gaur.service'
 import { EmployeeDetailsComponent } from './employee/employee-details.component';
+import { EmployeeListServiceResolverService } from './employee/employee-list-resolver.service';
 
 
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    component: ListEmployeesComponent
+    component: ListEmployeesComponent,
+    resolve: {employeeList : EmployeeListServiceResolverService}
   },
   {
     path: 'edit/:id',

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { employee } from '../models/employee.model';
 import { EmployeeService } from './employee.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
+import { ResolvedEmployeeList } from './resolved-employeeList.model';
 @Component({
   // selector: 'app-list-employees',
   templateUrl: './list-employees.component.html',
@@ -9,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class ListEmployeesComponent implements OnInit {
 
+  error: string;
   employees: employee[];
   filteredEmployees: employee[];
   private _searchTerm: string;
@@ -34,14 +36,25 @@ export class ListEmployeesComponent implements OnInit {
   // employeeToDisplay:employee;
   // private arrayIndex = 1;
   constructor(private _employeeService: EmployeeService,
-              private _router: Router) { }
+              private _router: Router,
+            private _route: ActivatedRoute) {
+            const resolvedEmployeeList: ResolvedEmployeeList=  this._route.snapshot.data['employeeList'];
+            if( resolvedEmployeeList.error == null){
+              this.employees = resolvedEmployeeList.employeelist;
+
+            }
+            else{
+               this.error = resolvedEmployeeList.error
+            }
+            this.filteredEmployees = this.employees;
+             }
 
   ngOnInit() {
-    this._employeeService.getEmployees().subscribe((empList) => { 
-      this.employees = empList; 
-      this.filteredEmployees = this.employees;
-    }  
-    );
+    // this._employeeService.getEmployees().subscribe((empList) => { 
+    //   this.employees = empList; 
+     
+    // }  
+    // );
     
     //this.employees = this._employeeService.getEmployees();// used to get employees array from employee service 
   
