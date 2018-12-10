@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { employee } from '../../app/models/employee.model';
+import { Observable } from 'rxjs/Observable';
 
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class EmployeeService {
-  private listEmployee: employee[] = [
+  private listEmployee: employee[]
+   = [
     {
       id: 1,
       name: 'Tom',
@@ -47,8 +51,8 @@ export class EmployeeService {
 
   ];
 
-  getEmployees(): employee[] {
-    return this.listEmployee;
+  getEmployees(): Observable<employee[]> {
+    return Observable.of(this.listEmployee).delay(2000);
   }
   getEmployee(id: number): employee {
     return this.listEmployee.find(employee => employee.id === id);

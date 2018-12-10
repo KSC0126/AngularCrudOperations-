@@ -1,0 +1,40 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Tom",
+      "gender": "male",
+      "email": "xxx@yyy.com",
+      "dateOfBirth": "6/25/1988",
+      "phoneNumber": 1234567890,
+      "contactPrefrence": "email",
+      "department": 2,
+      "isActive": true,
+      "photoPath": "assets/images/male3.png"
+    },
+    {
+      "id": 2,
+      "name": "theja",
+      "gender": "female",
+      "email": "xxx@yyy.com",
+      "dateOfBirth": "6/25/1988",
+      "phoneNumber": 1234567890,
+      "contactPrefrence": "email",
+      "department": 2,
+      "isActive": true,
+      "photoPath": "assets/images/female.png"
+    },
+    {
+      "id": 3,
+      "name": "bathi",
+      "gender": "female",
+      "email": "xxx@yyy.com",
+      "dateOfBirth": "6/25/1988",
+      "phoneNumber": 1234567890,
+      "contactPrefrence": "email",
+      "department": 2,
+      "isActive": true,
+      "photoPath": "assets/images/male.png"
+    }
+  ]
+}

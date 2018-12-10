@@ -37,8 +37,14 @@ export class ListEmployeesComponent implements OnInit {
               private _router: Router) { }
 
   ngOnInit() {
-    this.employees = this._employeeService.getEmployees();// used to get employees array from employee service 
-    this.filteredEmployees = this.employees;
+    this._employeeService.getEmployees().subscribe((empList) => { 
+      this.employees = empList; 
+      this.filteredEmployees = this.employees;
+    }  
+    );
+    
+    //this.employees = this._employeeService.getEmployees();// used to get employees array from employee service 
+  
     // this.employeeToDisplay = this.employees[0];
   }
   // handleNotify(eventData: employee){
